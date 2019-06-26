@@ -7,49 +7,49 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/昌/DYNetwork'
+  s.homepage         = 'https://github.com/SilenceWater/DYNetwork'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '昌' => 'dyzhcs' }
-  s.source           = { :git => 'https://github.com/昌/DYNetwork.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SilenceWater/DYNetwork.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
+  s.public_header_files = 'DYNetwork/Classes/DYNetwork.h'
+  s.source_files = 'DYNetwork/Classes/DYNetwork.h'
   #s.source_files = 'DYNetwork/Classes/**/*.{h,m}'
 
     s.subspec 'DYNetworkConfig' do |config|
-        config.source_files = 'DYNetwork/Classes/DYNetwork/DYNetworkConfig/*.{h,m}'
+        config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
     end
     
     s.subspec 'DYNetworkLogger' do |logger|
-        logger.source_files = 'DYNetwork/Classes/DYNetwork/DYNetworkLogger/*.{h,m}'
+        logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
     end
     
     s.subspec 'DYNetworkManager' do |manager|
-        manager.source_files = 'DYNetwork/Classes/DYNetwork/DYNetworkManager/*.{h,m}'
+        manager.source_files = 'DYNetwork/Classes/DYNetworkManager/*.{h,m}'
     end
     
-    s.subspec 'DYProtocol' do |protocol|
-        protocol.source_files = 'DYNetwork/Classes/DYNetwork/DYProtocol/*.{h,m}'
+    s.subspec 'DYNetworkProtocol' do |protocol|
+        protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h,m}'
     end
     
-    s.subspec 'DYRequest' do |request|
-        request.source_files = 'DYNetwork/Classes/DYNetwork/DYRequest/*.{h,m}'
+    s.subspec 'DYNetworkRequest' do |request|
+        request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
     end
     
-    s.subspec 'DYResponse' do |response|
-        response.source_files = 'DYNetwork/Classes/DYNetwork/DYResponse/*.{h,m}'
+    s.subspec 'DYNetworkResponse' do |response|
+        response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
     end
-  # s.resource_bundles = {
-  #   'DYNetwork' => ['DYNetwork/Assets/*.png']
-  # }
+  
 
-   s.public_header_files = 'Pod/Classes/**/DYNetwork.h'
+  #s.public_header_files = 'DYNetwork/Classes/**/DYNetwork.h'
   # s.frameworks = 'UIKit', 'MapKit'
+  
+  
    s.dependency 'AFNetworking'
-   
-   
    
    
 end

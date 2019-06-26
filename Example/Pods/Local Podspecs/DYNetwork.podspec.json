@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of DYNetwork.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/昌/DYNetwork",
+  "homepage": "https://github.com/SilenceWater/DYNetwork",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,13 +12,14 @@
     "昌": "dyzhcs"
   },
   "source": {
-    "git": "https://github.com/昌/DYNetwork.git",
+    "git": "https://github.com/SilenceWater/DYNetwork.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "public_header_files": "Pod/Classes/**/DYNetwork.h",
+  "public_header_files": "DYNetwork/Classes/DYNetwork.h",
+  "source_files": "DYNetwork/Classes/DYNetwork.h",
   "dependencies": {
     "AFNetworking": [
 
@@ -27,27 +28,27 @@
   "subspecs": [
     {
       "name": "DYNetworkConfig",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkConfig/*.{h,m}"
+      "source_files": "DYNetwork/Classes/DYNetworkConfig/*.{h,m}"
     },
     {
       "name": "DYNetworkLogger",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkLogger/*.{h,m}"
+      "source_files": "DYNetwork/Classes/DYNetworkLogger/*.{h,m}"
     },
     {
       "name": "DYNetworkManager",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkManager/*.{h,m}"
+      "source_files": "DYNetwork/Classes/DYNetworkManager/*.{h,m}"
     },
     {
-      "name": "DYProtocol",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYProtocol/*.{h,m}"
+      "name": "DYNetworkProtocol",
+      "source_files": "DYNetwork/Classes/DYNetworkProtocol/*.{h,m}"
     },
     {
-      "name": "DYRequest",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYRequest/*.{h,m}"
+      "name": "DYNetworkRequest",
+      "source_files": "DYNetwork/Classes/DYNetworkRequest/*.{h,m}"
     },
     {
-      "name": "DYResponse",
-      "source_files": "DYNetwork/Classes/DYNetwork/DYResponse/*.{h,m}"
+      "name": "DYNetworkResponse",
+      "source_files": "DYNetwork/Classes/DYNetworkResponse/*.{h,m}"
     }
   ]
 }

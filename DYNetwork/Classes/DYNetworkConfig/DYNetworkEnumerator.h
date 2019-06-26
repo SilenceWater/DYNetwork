@@ -102,4 +102,11 @@ typedef NS_ENUM(NSInteger , DYServiceAuthenticationStatus) {
 };
 
 
+typedef NS_ENUM(NSUInteger, DYRequestPriority) {
+    DYRequestPriorityLow,
+    DYRequestPriorityMid,
+    DYRequestPriorityHig,
+};
+
+
 #endif /* DYNetworkEnumerator_h */
