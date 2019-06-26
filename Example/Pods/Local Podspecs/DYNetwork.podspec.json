@@ -1,0 +1,53 @@
+{
+  "name": "DYNetwork",
+  "version": "0.1.0",
+  "summary": "A short description of DYNetwork.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/昌/DYNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "昌": "dyzhcs"
+  },
+  "source": {
+    "git": "https://github.com/昌/DYNetwork.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "public_header_files": "Pod/Classes/**/DYNetwork.h",
+  "dependencies": {
+    "AFNetworking": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "DYNetworkConfig",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkConfig/*.{h,m}"
+    },
+    {
+      "name": "DYNetworkLogger",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkLogger/*.{h,m}"
+    },
+    {
+      "name": "DYNetworkManager",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYNetworkManager/*.{h,m}"
+    },
+    {
+      "name": "DYProtocol",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYProtocol/*.{h,m}"
+    },
+    {
+      "name": "DYRequest",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYRequest/*.{h,m}"
+    },
+    {
+      "name": "DYResponse",
+      "source_files": "DYNetwork/Classes/DYNetwork/DYResponse/*.{h,m}"
+    }
+  ]
+}

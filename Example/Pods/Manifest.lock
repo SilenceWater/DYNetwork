@@ -1,0 +1,64 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - DYNetwork (0.1.0):
+    - AFNetworking
+    - DYNetwork/DYNetworkConfig (= 0.1.0)
+    - DYNetwork/DYNetworkLogger (= 0.1.0)
+    - DYNetwork/DYNetworkManager (= 0.1.0)
+    - DYNetwork/DYProtocol (= 0.1.0)
+    - DYNetwork/DYRequest (= 0.1.0)
+    - DYNetwork/DYResponse (= 0.1.0)
+  - DYNetwork/DYNetworkConfig (0.1.0):
+    - AFNetworking
+  - DYNetwork/DYNetworkLogger (0.1.0):
+    - AFNetworking
+  - DYNetwork/DYNetworkManager (0.1.0):
+    - AFNetworking
+  - DYNetwork/DYProtocol (0.1.0):
+    - AFNetworking
+  - DYNetwork/DYRequest (0.1.0):
+    - AFNetworking
+  - DYNetwork/DYResponse (0.1.0):
+    - AFNetworking
+  - MBProgressHUD (1.1.0)
+  - SANetwork (1.1.1):
+    - AFNetworking (~> 3.0)
+
+DEPENDENCIES:
+  - DYNetwork (from `../`)
+  - MBProgressHUD
+  - SANetwork
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - MBProgressHUD
+    - SANetwork
+
+EXTERNAL SOURCES:
+  DYNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DYNetwork: c6cef1e536fca1399a4eb03c60af54a2937957f5
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  SANetwork: d3cbec4f4cbf7eeb839c95af1c4b72ed085c7b0c
+
+PODFILE CHECKSUM: e880ce1e4425daa3305208541e9a4508d08073e3
+
+COCOAPODS: 1.7.1
