@@ -20,29 +20,30 @@ TODO: Add long description of the pod here.
   #s.source_files = 'DYNetwork/Classes/DYNetwork.h'
   s.source_files = 'DYNetwork/Classes/**/*.{h,m}'
 
-    s.subspec 'DYNetworkConfig' do |config|
-        config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
-    end
+  #s.subspec 'DYNetworkConfig' do |config|
+  #config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
+  #config.dependency = 'DYNetwork/Classes/DYNetworkConfig'
+  #end
     
-    s.subspec 'DYNetworkLogger' do |logger|
-        logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkLogger' do |logger|
+    #logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
+    #end
     
-    s.subspec 'DYNetworkManager' do |manager|
-        manager.source_files = 'DYNetwork/Classes/DYNetworkManager/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkManager' do |manager|
+    #manager.source_files = 'DYNetwork/Classes/DYNetworkManager/*.{h,m}'
+    #end
     
-    s.subspec 'DYNetworkProtocol' do |protocol|
-        protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkProtocol' do |protocol|
+    #protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h,m}'
+    #end
     
-    s.subspec 'DYNetworkRequest' do |request|
-        request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkRequest' do |request|
+    #request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
+    #end
     
-    s.subspec 'DYNetworkResponse' do |response|
-        response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkResponse' do |response|
+    #response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
+    #end
   
 
   # s.frameworks = 'UIKit', 'MapKit'
