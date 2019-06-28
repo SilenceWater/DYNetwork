@@ -16,24 +16,6 @@ PODS:
     - AFNetworking/NSURLSession
   - DYNetwork (0.1.0):
     - AFNetworking
-    - DYNetwork/DYNetworkConfig (= 0.1.0)
-    - DYNetwork/DYNetworkLogger (= 0.1.0)
-    - DYNetwork/DYNetworkManager (= 0.1.0)
-    - DYNetwork/DYNetworkProtocol (= 0.1.0)
-    - DYNetwork/DYNetworkRequest (= 0.1.0)
-    - DYNetwork/DYNetworkResponse (= 0.1.0)
-  - DYNetwork/DYNetworkConfig (0.1.0):
-    - AFNetworking
-  - DYNetwork/DYNetworkLogger (0.1.0):
-    - AFNetworking
-  - DYNetwork/DYNetworkManager (0.1.0):
-    - AFNetworking
-  - DYNetwork/DYNetworkProtocol (0.1.0):
-    - AFNetworking
-  - DYNetwork/DYNetworkRequest (0.1.0):
-    - AFNetworking
-  - DYNetwork/DYNetworkResponse (0.1.0):
-    - AFNetworking
   - MBProgressHUD (1.1.0)
 
 DEPENDENCIES:
@@ -51,9 +33,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  DYNetwork: 71ebc127927576bfce97ac81e070c41c5a90675c
+  DYNetwork: da09cb9bf8bb8144d99a45281b4b0390ef3c3a1e
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
 
-PODFILE CHECKSUM: 2109dd1c343c9de9a31d7e558be0fa918a99ff68
+PODFILE CHECKSUM: 184f537783f8bf04f51af5793f7e5d8adc39288f
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.6.1

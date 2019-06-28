@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB4276C387E8F610D2C1D81DE0CB545D"
+               BlueprintIdentifier = "903A9D6E24691453D351A57758F5CD3B"
                BuildableName = "Pods_DYNetwork_Tests.framework"
                BlueprintName = "Pods-DYNetwork_Tests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4276C387E8F610D2C1D81DE0CB545D"
+            BlueprintIdentifier = "903A9D6E24691453D351A57758F5CD3B"
             BuildableName = "Pods_DYNetwork_Tests.framework"
             BlueprintName = "Pods-DYNetwork_Tests"
             ReferencedContainer = "container:Pods.xcodeproj">

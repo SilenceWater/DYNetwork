@@ -22,7 +22,6 @@ TODO: Add long description of the pod here.
 
     s.subspec 'DYNetworkConfig' do |config|
         config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
-        config.dependency = 'DYNetwork/Classes/DYNetworkConfig'
     end
     
     s.subspec 'DYNetworkLogger' do |logger|

@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)networkRequestAccessoryWillStart;
 
-
 /**
  请求已经执行 did
  */
@@ -40,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)networkRequestAccessoryByStatus:(DYNetworkStatus)networkStatus;
 
 /**
- 请求完成执行 与 networkRequestAccessoryByStatus: 会同时被调用
+ 请求完成执行 与 networkRequestAccessoryByStatus: 会同时被调用（只适用于 单体请求）
 
  @param response 请求响应数据
  */

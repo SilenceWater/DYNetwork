@@ -24,31 +24,5 @@
     "AFNetworking": [
 
     ]
-  },
-  "subspecs": [
-    {
-      "name": "DYNetworkConfig",
-      "source_files": "DYNetwork/Classes/DYNetworkConfig/*.{h,m}"
-    },
-    {
-      "name": "DYNetworkLogger",
-      "source_files": "DYNetwork/Classes/DYNetworkLogger/*.{h,m}"
-    },
-    {
-      "name": "DYNetworkManager",
-      "source_files": "DYNetwork/Classes/DYNetworkManager/*.{h,m}"
-    },
-    {
-      "name": "DYNetworkProtocol",
-      "source_files": "DYNetwork/Classes/DYNetworkProtocol/*.{h,m}"
-    },
-    {
-      "name": "DYNetworkRequest",
-      "source_files": "DYNetwork/Classes/DYNetworkRequest/*.{h,m}"
-    },
-    {
-      "name": "DYNetworkResponse",
-      "source_files": "DYNetwork/Classes/DYNetworkResponse/*.{h,m}"
-    }
-  ]
+  }
 }
