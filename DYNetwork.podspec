@@ -16,14 +16,14 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.public_header_files = 'DYNetwork/Classes/DYNetwork.h'
+  
   #s.source_files = 'DYNetwork/Classes/DYNetwork.h'
   s.source_files = 'DYNetwork/Classes/**/*.{h,m}'
-
-  #s.subspec 'DYNetworkConfig' do |config|
-  #config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
-  #config.dependency = 'DYNetwork/Classes/DYNetworkConfig'
-  #end
+  s.public_header_files = 'DYNetwork.h'
+  
+    #s.subspec 'DYNetworkConfig' do |config|
+    #config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
+    #end
     
     #s.subspec 'DYNetworkLogger' do |logger|
     #logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
@@ -44,10 +44,6 @@ TODO: Add long description of the pod here.
     #s.subspec 'DYNetworkResponse' do |response|
     #response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
     #end
-  
-
-  # s.frameworks = 'UIKit', 'MapKit'
-  
   
    s.dependency 'AFNetworking'
    
