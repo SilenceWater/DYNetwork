@@ -28,7 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)networkRequestAccessoryDidStart;
 
 /**
- 请求完成执行 end 与 networkRequestAccessoryDidEndByResponse: 会同时被调用
+ 请求已经完成 finish
+ */
+- (void)networkRequestAccessoryDidFinish;
+
+/**
+ 请求完成执行 end 与 networkRequestAccessoryDidEndByResponse: 会同时被调用（只适用于 单体请求）
 
  @param networkStatus 网络请求状态值
  */

@@ -70,9 +70,11 @@
 
 - (NSString *)responseMsgByNetworkStatus:(DYNetworkStatus)networkStatus {
     /**
-    若做国际化的话，因为AFNetworking的国际化文件使用的是AFNetworking.strings，这个类库又是依赖AFNetworking的。为了少创建一个 .strings 文件。这里就复用“AFNetworking”了。
+     若做国际化的话，因为AFNetworking的国际化文件使用的是AFNetworking.strings，这个类库又是依赖AFNetworking的。为了少创建一个 .strings 文件。这里就复用“AFNetworking”了。
      */
     switch (networkStatus) {
+        case DYNetworkRequestCancelStatus:
+            return NSLocalizedStringFromTable(@"请求被取消", @"AFNetworking", nil);
         case DYNetworkNotReachableStatus:
             return NSLocalizedStringFromTable(@"网络异常", @"AFNetworking", nil);
         case DYNetworkRequestParamIncorrectStatus:

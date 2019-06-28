@@ -35,7 +35,7 @@
 }
 
 /**
- 默认SARequestSerializerTypeHTTP
+ 默认DYRequestSerializerTypeHTTP
  
  @return [AFHTTPRequestSerializer serializer]
  */
@@ -45,7 +45,7 @@
 
 
 /**
- 默认SAResponseSerializerTypeJSON
+ 默认DYResponseSerializerTypeJSON
  
  @return [AFJSONResponseSerializer serializer]
  */
@@ -88,15 +88,17 @@
  */
 - (DYServiceAuthenticationStatus)serviceBaseAuthenticationWithNetworkRequest:(DYNetworkRequest *)networkRequest response:(id)response {
     
+    if (response) {
+        return DYServiceAuthenticationStatusPass;
+    }
     
-    
-    return DYServiceAuthenticationStatusPass;
+    return DYServiceAuthenticationStatusWrong;
 }
 
 
 /**
  请求失败之后的重试次数，最大设置为3次，默认为0
- @warning 仅限SANetworkResponseFailureStatus 或 SANetworkNotReachableStatus 失败状态下，起作用
+ @warning 仅限DYNetworkResponseFailureStatus 或 DYNetworkNotReachableStatus 失败状态下，起作用
  @return 重试次数
  */
 - (NSUInteger)serviceRequestRetryCountWhenFailure {
@@ -122,7 +124,7 @@
  @return message key
  */
 - (NSString *)responseMessageKey {
-    return @"msg";
+    return @"Message";
 }
 
 
@@ -132,7 +134,7 @@
  @return code key
  */
 - (NSString *)responseCodeKey {
-    return @"code";
+    return @"ResponseStatus";
 }
 
 
@@ -142,7 +144,7 @@
  @return content key
  */
 - (NSString *)responseContentDataKey {
-    return @"data";
+    return @"Data";
 }
 
 @end

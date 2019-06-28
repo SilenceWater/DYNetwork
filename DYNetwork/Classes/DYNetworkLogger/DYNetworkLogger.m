@@ -12,10 +12,12 @@
 + (void)logDebugRequestInfoWithURL:(NSString *)url
                         httpMethod:(NSInteger)httpMethod
                             params:(NSDictionary *)params
-                reachabilityStatus:(NSInteger)reachabilityStatus{
-    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n**********************************************************************************\n*                                    Request                                     *\n**********************************************************************************\n"];
+                reachabilityStatus:(NSInteger)reachabilityStatus
+                    networkPriority:(int)priority {
+    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n**********************************************************************************\n*                                  🚀Request🚀                                   *\n**********************************************************************************\n"];
     [logString appendFormat:@"URL:\t\t\t\t%@\n",url];
-    [logString appendFormat:@"Method:\t\t\t%@\n",httpMethod == 0 ? @"Post" : @"Get"];
+    [logString appendFormat:@"Priority:\t\t\t%@\n",@(priority)];
+    [logString appendFormat:@"Method:\t\t\t\t%@\n",httpMethod == 0 ? @"Post" : @"Get"];
     [logString appendFormat:@"Param:\t\t\t%@\n",params.count ? params : @""];
     NSString *netReachability = nil;
     switch (reachabilityStatus) {
@@ -33,7 +35,7 @@
             break;
     }
     [logString appendFormat:@"Net:\t\t\t\t\t%@",netReachability];
-    [logString appendFormat:@"\n**********************************************************************************\n*                                  Request End                                   *\n**********************************************************************************\n\n\n\n"];
+    [logString appendFormat:@"\n**********************************************************************************\n*                                🚀Request End🚀                                 *\n**********************************************************************************\n\n\n\n"];
     NSLog(@"%@", logString);
 }
 
@@ -41,7 +43,7 @@
                                  responseObject:(id)response
                                  authentication:(BOOL)authentication
                                           error:(NSError *)error {
-    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==================================================================================\n=                                  Net Response                                  =\n==================================================================================\n"];
+    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==================================================================================\n=                                👇Net Response👇                                =\n==================================================================================\n"];
     [logString appendFormat:@"Request URL:\t\t%@\n", sessionDataTask.currentRequest.URL];
     if ([sessionDataTask.response isKindOfClass:[NSHTTPURLResponse class]]) {
         [logString appendFormat:@"Status:\t\t\t\t\t%ld\n", (long)[(NSHTTPURLResponse *)sessionDataTask.response statusCode]];
@@ -64,7 +66,7 @@
             [logString appendFormat:@"\n\nHTTP Body:\n\t%@", [[NSString alloc] initWithData:sessionDataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
         }
     }
-    [logString appendFormat:@"\n==================================================================================\n=                               Net Response End                                 =\n==================================================================================\n\n\n\n"];
+    [logString appendFormat:@"\n==================================================================================\n=                             ☝️Net Response End☝️                               =\n==================================================================================\n\n\n\n"];
     NSLog(@"%@", logString);
 }
 

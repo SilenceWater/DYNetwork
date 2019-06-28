@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSMutableArray *accessoryArray;
 
+@property (nonatomic, assign) DYNetworkPriorityType priorityType;
+
 @end
 
 @implementation DYNetworkRequest
@@ -29,6 +31,17 @@
         }
     }
     return self;
+}
+
+- (DYNetworkPriorityType)priorityType {
+    if (!_priorityType) {
+        if ([self.requestConfigProtocol respondsToSelector:@selector(networkPriorityType)]) {
+            _priorityType = [self.requestConfigProtocol networkPriorityType];
+        }else {
+            _priorityType = DYNetworkPriorityTypeDefaultNormal;
+        }
+    }
+    return _priorityType;
 }
 
 - (void)startRequest {
@@ -50,13 +63,16 @@
 }
 
 - (void)dealloc {
+    if (self.containerClass) {
+        _containerClass = nil;
+    }
     [[DYNetworkManager sharedInstance] removeRequest:self];
 }
 
 #pragma mark-
 #pragma mark-Accessory
 
-- (void)addNetworkAccessoryObject:(id<DYNetworkAccessoryProtocol>)accessoryDelegate {
+- (void)addNetworkAccessoryObject:(id <DYNetworkAccessoryProtocol>)accessoryDelegate {
     if (accessoryDelegate == nil)  return;
     
     if (_accessoryArray == nil) {
@@ -84,6 +100,11 @@
 
 - (void)accessoryFinishByResponse:(DYNetworkResponse *)response {
     for (id<DYNetworkAccessoryProtocol>accessory in self.accessoryArray) {
+        
+        if ([accessory respondsToSelector:@selector(networkRequestAccessoryDidFinish)]) {
+            [accessory networkRequestAccessoryDidFinish];
+        }
+        
         if ([accessory respondsToSelector:@selector(networkRequestAccessoryByStatus:)]) {
             [accessory networkRequestAccessoryByStatus:response.networkStatus];
         }

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DYHudAccessoryView : UIView <DYNetworkAccessoryProtocol>
+@interface DYHudAccessory : UIView <DYNetworkAccessoryProtocol>
 
 - (instancetype)initWithView:(UIView *)view msg:(NSString *)msg;
 

@@ -1,6 +1,0 @@
-framework module SANetwork {
-  umbrella header "SANetwork-umbrella.h"
-
-  export *
-  module * { export * }
-}

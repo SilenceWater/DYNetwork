@@ -35,19 +35,15 @@ PODS:
   - DYNetwork/DYNetworkResponse (0.1.0):
     - AFNetworking
   - MBProgressHUD (1.1.0)
-  - SANetwork (1.1.1):
-    - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - DYNetwork (from `../`)
   - MBProgressHUD
-  - SANetwork
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - MBProgressHUD
-    - SANetwork
 
 EXTERNAL SOURCES:
   DYNetwork:
@@ -55,10 +51,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  DYNetwork: 458298c8f0736d2a3c633fb8ba5405d358cf9d87
+  DYNetwork: 71ebc127927576bfce97ac81e070c41c5a90675c
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  SANetwork: d3cbec4f4cbf7eeb839c95af1c4b72ed085c7b0c
 
-PODFILE CHECKSUM: e880ce1e4425daa3305208541e9a4508d08073e3
+PODFILE CHECKSUM: 2109dd1c343c9de9a31d7e558be0fa918a99ff68
 
 COCOAPODS: 1.7.2

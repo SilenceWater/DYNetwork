@@ -16,10 +16,12 @@
 #import "DYNetworkLogger.h"
 #import "DYNetworkManager.h"
 #import "DYNetworkAccessoryProtocol.h"
+#import "DYNetworkBatchResponseProtocol.h"
 #import "DYNetworkInterceptorProtocol.h"
 #import "DYNetworkRequestConfigProtocol.h"
 #import "DYNetworkResponseProtocol.h"
 #import "DYNetworkServiceProtocol.h"
+#import "DYNetworkBatchRequest.h"
 #import "DYNetworkRequest.h"
 #import "DYNetworkResponse.h"
 

@@ -27,14 +27,14 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 /**
  *  属于哪个服务
- *  @warning 需要注意的是若想取到这个key对应的服务，要先使用这个key配置SANetworkConfig的setServiceObject:serviceIdentifier:。
+ *  @warning 需要注意的是若想取到这个key对应的服务，要先使用这个key配置DYNetworkConfig的setServiceObject:serviceIdentifier:。
  *  @return 服务的key （string）
  */
 - (NSString *)serviceIdentifierKey;
 
 
 /**
- 接口地址。若设置带有http的请求地址，将会忽略SANetworkConfig设置的url
+ 接口地址。若设置带有http的请求地址，将会忽略DYNetworkConfig设置的url
 
  @return 接口地址 or 配置路径
  */
@@ -90,6 +90,14 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 
 /**
+ 请求优先级
+
+ @return 优先级
+ */
+- (DYNetworkPriorityType)networkPriorityType;
+
+    
+/**
  检查请求参数
 
  @param params 请求参数
@@ -131,14 +139,14 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 - (DYRequestHandleSameRequestType)handleSameRequestType;
 
 /**
- 很多请求都会需要相同的请求参数，可设置SANetworkConfig的baseParamSourceBlock，这个block会返回你所设置的基础参数。默认YES
+ 很多请求都会需要相同的请求参数，可设置DYNetworkConfig的baseParamSourceBlock，这个block会返回你所设置的基础参数。默认YES
 
  @return 是否使用基础参数
  */
 - (BOOL)useBaseRequestParamSource;
 
 /**
- SANetworkConfig设置过baseHTTPRequestHeadersBlock后，可通过此协议方法决定是否使用baseHTTPRequestHeaders，默认使用（YES）
+ DYNetworkConfig设置过baseHTTPRequestHeadersBlock后，可通过此协议方法决定是否使用baseHTTPRequestHeaders，默认使用（YES）
 
  @return 是否使用baseHTTPRequestHeaders
  */
@@ -153,7 +161,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 
 /**
- 是否启用SANetworkConfig设定的请求验证，若设定了验证的Block，默认使用YES
+ 是否启用DYNetworkConfig设定的请求验证，若设定了验证的Block，默认使用YES
 
  @return 是否使用基础的请求验证
  */
@@ -163,7 +171,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /**
  定制是否输出log日志
 
- @return 定制，将忽略SANetworkConfig的enableDebug
+ @return 定制，将忽略DYNetworkConfig的enableDebug
  */
 - (BOOL)enableDebugLog;
 

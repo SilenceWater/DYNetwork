@@ -8,8 +8,9 @@
 
 #import "DYAppDelegate.h"
 #import <DYNetwork/DYNetwork.h>
-#import <SANetwork/SANetwork.h>
 #import "DYNetworkServiceObject.h"
+
+static NSString *const kServiceTypeDEV = @"com.dy.dev.service.identifier";
 
 @implementation DYAppDelegate
 
@@ -18,8 +19,8 @@
     DYNetworkServiceObject *object = [DYNetworkServiceObject new];
     object.serviceType = DYNetworkServiceTypeDEV;
     
-    [[DYNetworkConfig sharedInstance] registerServiceObject:object serviceIdentifier:@"com.dy.dev.service.identifier"];
-//    [[SANetworkConfig sharedInstance] registerServiceObject:object serviceIdentifier:@"com.dy.dev.service.identifier"];
+    [[DYNetworkConfig sharedInstance] registerServiceObject:object serviceIdentifier:kServiceTypeDEV];
+    
     
     return YES;
 }

@@ -33,8 +33,8 @@ typedef NS_ENUM(NSUInteger, DYNetworkStatus) {
 /**
  网络接口请求方式
 
- - SARequestMethodPost: Post请求
- - SARequestMethodGet: Get请求
+ - DYRequestMethodPost: Post请求
+ - DYRequestMethodGet: Get请求
  */
 typedef NS_ENUM(NSUInteger, DYRequestMethod) {
     DYRequestMethodPost,
@@ -102,11 +102,21 @@ typedef NS_ENUM(NSInteger , DYServiceAuthenticationStatus) {
 };
 
 
-typedef NS_ENUM(NSUInteger, DYRequestPriority) {
-    DYRequestPriorityLow,
-    DYRequestPriorityMid,
-    DYRequestPriorityHig,
-};
 
+/**
+ 处理优先级
+ 
+ - DYNetworkPriorityTypeVeryHigh:      非常高
+ - DYNetworkPriorityTypeDefaultHigh:   高
+ - DYNetworkPriorityTypeDefaultNormal: 正常
+ - DYNetworkPriorityTypeDefaultLow:    低
+ - DYNetworkPriorityTypeVeryLow:       非常低
+ */
+typedef int  DYNetworkPriorityType NS_TYPED_EXTENSIBLE_ENUM;
+static const DYNetworkPriorityType DYNetworkPriorityTypeVeryHigh      NS_AVAILABLE_IOS(10_0) = 1000;
+static const DYNetworkPriorityType DYNetworkPriorityTypeDefaultHigh   NS_AVAILABLE_IOS(10_0) = 750;
+static const DYNetworkPriorityType DYNetworkPriorityTypeDefaultNormal NS_AVAILABLE_IOS(10_0) = 500;
+static const DYNetworkPriorityType DYNetworkPriorityTypeDefaultLow    NS_AVAILABLE_IOS(10_0) = 250;
+static const DYNetworkPriorityType DYNetworkPriorityTypeVeryLow       NS_AVAILABLE_IOS(10_0) = 50;
 
 #endif /* DYNetworkEnumerator_h */

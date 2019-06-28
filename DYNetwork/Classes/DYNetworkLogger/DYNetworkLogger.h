@@ -22,7 +22,8 @@
 + (void)logDebugRequestInfoWithURL:(NSString *)url
                         httpMethod:(NSInteger)httpMethod
                             params:(NSDictionary *)params
-                reachabilityStatus:(NSInteger)reachabilityStatus;
+                reachabilityStatus:(NSInteger)reachabilityStatus
+                   networkPriority:(int)priority;
 
 
 /**

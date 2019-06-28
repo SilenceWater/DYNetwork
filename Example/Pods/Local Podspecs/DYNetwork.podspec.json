@@ -19,7 +19,7 @@
     "ios": "10.0"
   },
   "public_header_files": "DYNetwork/Classes/DYNetwork.h",
-  "source_files": "DYNetwork/Classes/DYNetwork.h",
+  "source_files": "DYNetwork/Classes/**/*.{h,m}",
   "dependencies": {
     "AFNetworking": [
 

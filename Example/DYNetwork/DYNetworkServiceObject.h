@@ -21,6 +21,8 @@ typedef NS_ENUM(NSUInteger, DYNetworkServiceType) {
 
 @property (nonatomic, assign) DYNetworkServiceType serviceType;
 
+
+
 @end
 
 NS_ASSUME_NONNULL_END

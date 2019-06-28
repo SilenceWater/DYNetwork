@@ -57,14 +57,18 @@
     return _sessionManager;
 }
 
+
 #pragma mark -
 #pragma mark - Methods
 
 - (void)addRequest:(__kindof DYNetworkRequest<DYNetworkRequestConfigProtocol> *)request {
+    
     if ([_requestRecordDict.allValues containsObject:request]) {
         NSLog(@"\n\n\n------------- 重复启动请求！相同的请求正在执行中 -----------");
         return;
     }
+    
+    
     NSString *requestURLString = [self urlStringByRequest:request];
     NSDictionary *requestParam = [self requestParamByRequest:request];
     
@@ -111,10 +115,10 @@
     
     if ([request respondsToSelector:@selector(enableDebugLog)]) {
         if ([request enableDebugLog]) {
-            [DYNetworkLogger logDebugRequestInfoWithURL:requestURLString httpMethod:[self requestMethodByRequest:request] params:requestParam reachabilityStatus:[[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus]];
+            [DYNetworkLogger logDebugRequestInfoWithURL:requestURLString httpMethod:[self requestMethodByRequest:request] params:requestParam reachabilityStatus:[[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] networkPriority:request.priorityType];
         }
     }else if ([DYNetworkConfig sharedInstance].enableDebug) {
-        [DYNetworkLogger logDebugRequestInfoWithURL:requestURLString httpMethod:[self requestMethodByRequest:request] params:requestParam reachabilityStatus:[[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus]];
+        [DYNetworkLogger logDebugRequestInfoWithURL:requestURLString httpMethod:[self requestMethodByRequest:request] params:requestParam reachabilityStatus:[[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] networkPriority:request.priorityType];
     }
     
     [self setupSessionManagerRequestSerializerByRequest:request];
@@ -182,6 +186,9 @@
         [_requestRecordDict removeObjectForKey:taskKey];
     }
 }
+
+#pragma makr -
+#pragma makr - BathRequest
 
 
 #pragma mark -
@@ -465,15 +472,11 @@
     if(authenticationStatus ==  DYServiceAuthenticationStatusPass && [request.requestConfigProtocol isCorrectWithResponseData:response]){
         DYNetworkResponse *successResponse = [[DYNetworkResponse alloc] initWithResponseData:response serviceIdentifierKey:[request serviceIdentifierKey] requestTag:request.tag networkStatus:DYNetworkResponseDataSuccessStatus];
         [request stopRequestByResponse:successResponse];
-//        if ([request.interceptorDelegate respondsToSelector:@selector(networkRequest:beforePerformSuccessWithResponse:)]) {
-//            [request.interceptorDelegate networkRequest:request beforePerformSuccessWithResponse:response];
-//        }
+
         if ([request.responseDelegate respondsToSelector:@selector(networkRequest:succeedByResponse:)]) {
             [request.responseDelegate networkRequest:request succeedByResponse:successResponse];
         }
-//        if ([request.interceptorDelegate respondsToSelector:@selector(networkRequest:afterPerformSuccessWithResponse:)]) {
-//            [request.interceptorDelegate networkRequest:request afterPerformSuccessWithResponse:response];
-//        }
+
     } else {
         DYNetworkStatus failStatus;
         switch (authenticationStatus) {

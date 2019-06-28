@@ -11,6 +11,6 @@
 #import "DYNetworkConfig.h"
 #import "DYNetworkRequest.h"
 #import "DYNetworkResponse.h"
-#import "DYNetworkEnumerator.h"
+#import "DYNetworkBatchRequest.h"
 
 #endif /* DYNetwork_h */

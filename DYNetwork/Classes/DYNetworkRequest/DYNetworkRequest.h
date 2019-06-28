@@ -7,13 +7,15 @@
 
 #import <Foundation/Foundation.h>
 #import "DYNetworkAccessoryProtocol.h"
-//#import "DYNetworkInterceptorProtocol.h"
 #import "DYNetworkRequestConfigProtocol.h"
 #import "DYNetworkResponseProtocol.h"
 #import "DYNetworkServiceProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 单体请求
+ */
 @interface DYNetworkRequest : NSObject
 
 /*! 请求tag 区分同一个代理存在多个请求 */
@@ -28,14 +30,17 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 响应协议 */
 @property (nonatomic, weak) id <DYNetworkResponseProtocol>responseDelegate;
 
-/*! 拦截协议 */
-//@property (nonatomic, weak) id <DYNetworkInterceptorProtocol>interceptorDelegate;
-
 /*! 插件协议 */
 @property (nonatomic, weak) id <DYNetworkAccessoryProtocol>accessoryDelegate;
 
 /*! 重复次数 */
 @property (nonatomic, assign) NSUInteger retryCount;
+
+/*! 优先级（默认 DYNetworkPriorityTypeDefaultNormal ） */
+@property (nonatomic, assign, readonly) DYNetworkPriorityType priorityType;
+
+/*! 容器类（单体请求可以为空） */
+@property (nonatomic, weak) id containerClass;
 
 
 /**
@@ -58,11 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)stopRequestByResponse:(DYNetworkResponse *)response;
 
+
 /**
- *  @brief 添加实现了SANetworkAccessoryProtocol的插件对象
- *
- *  @param accessoryDelegate 插件对象
- *  @warning 务必在启动请求之前添加插件。
+ 添加实现了DYNetworkAccessoryProtocol的插件对象
+ @waring 在启动请求之前添加插件 可添加多个
+ @param accessoryDelegate accessoryDelegate 插件对象
  */
 - (void)addNetworkAccessoryObject:(id<DYNetworkAccessoryProtocol>)accessoryDelegate;
 

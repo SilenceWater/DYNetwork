@@ -25,7 +25,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		91CEA6E422C2062D009FCCDF /* DYTempRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA6E322C2062D009FCCDF /* DYTempRequest.m */; };
 		91CEA6E722C2107C009FCCDF /* DYNetworkServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA6E622C2107C009FCCDF /* DYNetworkServiceObject.m */; };
-		91CEA6EF22C22C6B009FCCDF /* DYHudAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA6EE22C22C6B009FCCDF /* DYHudAccessoryView.m */; };
+		91CEA6EF22C22C6B009FCCDF /* DYHudAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA6EE22C22C6B009FCCDF /* DYHudAccessory.m */; };
 		DB572544DA41BF872D3F6AFD /* Pods_DYNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751C620ED5D02F0C98381105 /* Pods_DYNetwork_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +72,8 @@
 		91CEA6E322C2062D009FCCDF /* DYTempRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYTempRequest.m; sourceTree = "<group>"; };
 		91CEA6E522C2107C009FCCDF /* DYNetworkServiceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYNetworkServiceObject.h; sourceTree = "<group>"; };
 		91CEA6E622C2107C009FCCDF /* DYNetworkServiceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYNetworkServiceObject.m; sourceTree = "<group>"; };
-		91CEA6ED22C22C6B009FCCDF /* DYHudAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYHudAccessoryView.h; sourceTree = "<group>"; };
-		91CEA6EE22C22C6B009FCCDF /* DYHudAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYHudAccessoryView.m; sourceTree = "<group>"; };
+		91CEA6ED22C22C6B009FCCDF /* DYHudAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYHudAccessory.h; sourceTree = "<group>"; };
+		91CEA6EE22C22C6B009FCCDF /* DYHudAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYHudAccessory.m; sourceTree = "<group>"; };
 		A52ABF6AA701E9197DBF0705 /* Pods_DYNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5DC9FD4E6A62E01893479B /* Pods-DYNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-DYNetwork_Tests/Pods-DYNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E7476DCCA5A2DBDC7E2F0D88 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 				91CEA6E322C2062D009FCCDF /* DYTempRequest.m */,
 				91CEA6E522C2107C009FCCDF /* DYNetworkServiceObject.h */,
 				91CEA6E622C2107C009FCCDF /* DYNetworkServiceObject.m */,
-				91CEA6ED22C22C6B009FCCDF /* DYHudAccessoryView.h */,
-				91CEA6EE22C22C6B009FCCDF /* DYHudAccessoryView.m */,
+				91CEA6ED22C22C6B009FCCDF /* DYHudAccessory.h */,
+				91CEA6EE22C22C6B009FCCDF /* DYHudAccessory.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -368,14 +368,12 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DYNetwork/DYNetwork.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SANetwork/SANetwork.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DYNetwork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SANetwork.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -389,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91CEA6EF22C22C6B009FCCDF /* DYHudAccessoryView.m in Sources */,
+				91CEA6EF22C22C6B009FCCDF /* DYHudAccessory.m in Sources */,
 				6003F59E195388D20070C39A /* DYAppDelegate.m in Sources */,
 				91CEA6E722C2107C009FCCDF /* DYNetworkServiceObject.m in Sources */,
 				6003F5A7195388D20070C39A /* DYViewController.m in Sources */,

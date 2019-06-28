@@ -20,7 +20,6 @@
 
 - (NSString *)requestMethodName {
     return @"Service/CustomerLogin";
-//    return @"/root/img";
     return @"http://r.qzone.qq.com/";
 }
 
@@ -79,18 +78,23 @@
     return 3;
 }
 
-/**
- 检查请求参数
- 
- @param params 请求参数
- @return 是否执行请求
- */
+
 - (BOOL)isCorrectWithRequestParams:(NSDictionary *)params {
     return YES;
 }
 
 - (BOOL)enableDebugLog {
     return YES;
+}
+
+- (DYNetworkPriorityType)networkPriorityType {
+    
+    DYNetworkPriorityType type = (DYNetworkPriorityType)[@[@(DYNetworkPriorityTypeVeryHigh),@(DYNetworkPriorityTypeVeryLow),@(DYNetworkPriorityTypeDefaultLow),@(DYNetworkPriorityTypeDefaultHigh),@(DYNetworkPriorityTypeDefaultNormal)][arc4random()%5] intValue];
+    return type;
+}
+
+- (DYRequestHandleSameRequestType)handleSameRequestType {
+    return DYRequestHandleSameRequestTypeBothContinue;
 }
 
 @end

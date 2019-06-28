@@ -5,13 +5,7 @@ platform :ios, '10.0'
 target 'DYNetwork_Example' do
   pod 'DYNetwork', :path => '../'
   
-  
-  pod 'SANetwork'
   pod 'MBProgressHUD'
-  
-  
-  
-  
   
   target 'DYNetwork_Tests' do
     inherit! :search_paths

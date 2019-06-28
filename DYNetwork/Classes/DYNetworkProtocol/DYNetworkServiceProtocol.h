@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 /**
- 默认SARequestSerializerTypeHTTP
+ 默认DYRequestSerializerTypeHTTP
 
  @return [AFHTTPRequestSerializer serializer]
  */
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 默认SAResponseSerializerTypeJSON
+ 默认DYResponseSerializerTypeJSON
 
  @return [AFJSONResponseSerializer serializer]
  */
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  请求失败之后的重试次数，最大设置为3次，默认为0
- @warning 仅限SANetworkResponseFailureStatus 或 SANetworkNotReachableStatus 失败状态下，起作用
+ @warning 仅限DYNetworkResponseFailureStatus 或 DYNetworkNotReachableStatus 失败状态下，起作用
  @return 重试次数
  */
 - (NSUInteger)serviceRequestRetryCountWhenFailure;
