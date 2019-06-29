@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DYNetwork'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'A short description of DYNetwork.'
 
   s.description      = <<-DESC
@@ -22,24 +22,25 @@ TODO: Add long description of the pod here.
   s.public_header_files = 'DYNetwork.h'
   
   
-    s.subspec 'DYNetworkProtocol' do |protocol|
-        protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h}'
-    end
+  # 由于request和manager存在互相依赖问题 所以不使用子文件
+    #s.subspec 'DYNetworkProtocol' do |protocol|
+    #protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h}'
+    #end
     
-    s.subspec 'DYNetworkLogger' do |logger|
-        logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
-    end
+    #s.subspec 'DYNetworkLogger' do |logger|
+    #logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
+    #end
 
-    s.subspec 'DYNetworkConfig' do |config|
-        config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
-        config.dependency 'DYNetwork/DYNetworkProtocol'
-    end
+    #s.subspec 'DYNetworkConfig' do |config|
+    #config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
+    #config.dependency 'DYNetwork/DYNetworkProtocol'
+    #end
     
-    s.subspec 'DYNetworkResponse' do |response|
-        response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
-        response.dependency 'DYNetwork/DYNetworkProtocol'
-        response.dependency 'DYNetwork/DYNetworkConfig'
-    end
+    #s.subspec 'DYNetworkResponse' do |response|
+    #response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
+    #response.dependency 'DYNetwork/DYNetworkProtocol'
+    #response.dependency 'DYNetwork/DYNetworkConfig'
+    #end
     
     #s.subspec 'DYNetworkManager' do |manager|
     #manager.source_files = 'DYNetwork/Classes/DYNetworkManager/*.{h,m}'
@@ -48,16 +49,11 @@ TODO: Add long description of the pod here.
     #end
     
     #s.subspec 'DYNetworkRequest' do |request|
-        #request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
-        #request.dependency 'DYNetwork/DYNetworkProtocol'
-        #end
+    #request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
+    #request.dependency 'DYNetwork/DYNetworkProtocol'
+    #end
     
     
-    
-    
-    
-    
-  
    s.dependency 'AFNetworking'
    
    
