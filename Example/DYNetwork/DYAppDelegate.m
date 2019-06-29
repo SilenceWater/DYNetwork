@@ -18,7 +18,6 @@ static NSString *const kServiceTypeDEV = @"com.dy.dev.service.identifier";
 {
     DYNetworkServiceObject *object = [DYNetworkServiceObject new];
     object.serviceType = DYNetworkServiceTypeDEV;
-    
     [[DYNetworkConfig sharedInstance] registerServiceObject:object serviceIdentifier:kServiceTypeDEV];
     
     

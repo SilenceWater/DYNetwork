@@ -21,29 +21,42 @@ TODO: Add long description of the pod here.
   s.source_files = 'DYNetwork/Classes/**/*.{h,m}'
   s.public_header_files = 'DYNetwork.h'
   
-    #s.subspec 'DYNetworkConfig' do |config|
-    #config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
-    #end
+  
+    s.subspec 'DYNetworkProtocol' do |protocol|
+        protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h}'
+    end
     
-    #s.subspec 'DYNetworkLogger' do |logger|
-    #logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
-    #end
+    s.subspec 'DYNetworkLogger' do |logger|
+        logger.source_files = 'DYNetwork/Classes/DYNetworkLogger/*.{h,m}'
+    end
+
+    s.subspec 'DYNetworkConfig' do |config|
+        config.source_files = 'DYNetwork/Classes/DYNetworkConfig/*.{h,m}'
+        config.dependency 'DYNetwork/DYNetworkProtocol'
+    end
+    
+    s.subspec 'DYNetworkResponse' do |response|
+        response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
+        response.dependency 'DYNetwork/DYNetworkProtocol'
+        response.dependency 'DYNetwork/DYNetworkConfig'
+    end
     
     #s.subspec 'DYNetworkManager' do |manager|
     #manager.source_files = 'DYNetwork/Classes/DYNetworkManager/*.{h,m}'
-    #end
-    
-    #s.subspec 'DYNetworkProtocol' do |protocol|
-    #protocol.source_files = 'DYNetwork/Classes/DYNetworkProtocol/*.{h,m}'
+    #manager.dependency 'DYNetwork/DYNetworkProtocol'
+    #manager.dependency 'AFNetworking'
     #end
     
     #s.subspec 'DYNetworkRequest' do |request|
-    #request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
-    #end
+        #request.source_files = 'DYNetwork/Classes/DYNetworkRequest/*.{h,m}'
+        #request.dependency 'DYNetwork/DYNetworkProtocol'
+        #end
     
-    #s.subspec 'DYNetworkResponse' do |response|
-    #response.source_files = 'DYNetwork/Classes/DYNetworkResponse/*.{h,m}'
-    #end
+    
+    
+    
+    
+    
   
    s.dependency 'AFNetworking'
    
