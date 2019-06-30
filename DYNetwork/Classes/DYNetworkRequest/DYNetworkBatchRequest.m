@@ -44,35 +44,33 @@
     
     _completedCount = 0;
     
-    NSArray *tempArr = [self.requestArray sortedArrayUsingComparator:^NSComparisonResult(DYNetworkRequest * _Nonnull obj1, DYNetworkRequest * _Nonnull obj2) {
-        if ((int)obj1.priorityType > (int)obj2.priorityType) {
-            return NSOrderedAscending;
-        }else if ((int)obj1.priorityType == (int)obj2.priorityType) {
-            return NSOrderedSame;
-        }
-        return NSOrderedDescending;
-    }];
-    
-//    NSSortDescriptor *priorityTypes = [NSSortDescriptor sortDescriptorWithKey:@"priorityType" ascending:NO];
-//    NSArray *arr = [self.requestArray sortedArrayUsingDescriptors:@[priorityTypes]];
-    
-    self.requestArray = tempArr;
-    
-    if (_sema == nil) {
-        _sema = dispatch_semaphore_create(self.maxConcurrentCount);
-    }
-    
-    [self.requestArray enumerateObjectsUsingBlock:^(DYNetworkRequest * _Nonnull networkRequest, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    queue.maxConcurrentOperationCount = self.maxConcurrentCount
+    for (DYNetworkRequest * _Nonnull networkRequest in self.requestArray) {
         networkRequest.responseDelegate = self;
         networkRequest.containerClass = self;
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSOperation * op = [NSBlockOperation blockOperationWithBlock:^{
             [[DYNetworkManager sharedInstance] addRequest:networkRequest];
-            dispatch_semaphore_signal(self -> _sema);
-        });
-        
-        dispatch_semaphore_wait(self-> _sema, DISPATCH_TIME_FOREVER);
-    }];
+        }];
+        switch (networkRequest.priorityType) {
+                case DYNetworkPriorityTypeVeryHigh:
+                op.queuePriority = NSOperationQueuePriorityVeryHigh;
+                break;
+                case DYNetworkPriorityTypeDefaultHigh:
+                op.queuePriority = NSOperationQueuePriorityHigh;
+                break;
+                case DYNetworkPriorityTypeDefaultLow:
+                op.queuePriority = NSOperationQueuePriorityLow;
+                break;
+                case DYNetworkPriorityTypeVeryLow:
+                op.queuePriority = NSOperationQueuePriorityVeryLow;
+                break;
+            default:
+                op.queuePriority = NSOperationQueuePriorityNormal;
+                break;
+        }
+        [queue addOperation:op];
+    }
     
     [self accessoryDidStart];
 }
