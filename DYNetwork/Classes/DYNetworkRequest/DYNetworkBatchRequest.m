@@ -45,7 +45,7 @@
     _completedCount = 0;
     
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    queue.maxConcurrentOperationCount = self.maxConcurrentCount
+    queue.maxConcurrentOperationCount = self.maxConcurrentCount;
     for (DYNetworkRequest * _Nonnull networkRequest in self.requestArray) {
         networkRequest.responseDelegate = self;
         networkRequest.containerClass = self;
@@ -54,19 +54,19 @@
         }];
         switch (networkRequest.priorityType) {
                 case DYNetworkPriorityTypeVeryHigh:
-                op.queuePriority = NSOperationQueuePriorityVeryHigh;
+                    op.queuePriority = NSOperationQueuePriorityVeryHigh;
                 break;
                 case DYNetworkPriorityTypeDefaultHigh:
-                op.queuePriority = NSOperationQueuePriorityHigh;
+                    op.queuePriority = NSOperationQueuePriorityHigh;
                 break;
                 case DYNetworkPriorityTypeDefaultLow:
-                op.queuePriority = NSOperationQueuePriorityLow;
+                    op.queuePriority = NSOperationQueuePriorityLow;
                 break;
                 case DYNetworkPriorityTypeVeryLow:
-                op.queuePriority = NSOperationQueuePriorityVeryLow;
+                    op.queuePriority = NSOperationQueuePriorityVeryLow;
                 break;
             default:
-                op.queuePriority = NSOperationQueuePriorityNormal;
+                    op.queuePriority = NSOperationQueuePriorityNormal;
                 break;
         }
         [queue addOperation:op];
