@@ -2,7 +2,7 @@
 //  DYNetworkEnumerator.h
 //  DYNetwork
 //
-//  Created by 德一智慧城市 on 2019/6/25.
+//  Created by 破晓工作室 on 2019/6/25.
 //
 
 #ifndef DYNetworkEnumerator_h
@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger , DYServiceAuthenticationStatus) {
 
 
 /**
- 处理优先级
+ 队列处理优先级
  
  - DYNetworkPriorityTypeVeryHigh:      非常高
  - DYNetworkPriorityTypeDefaultHigh:   高

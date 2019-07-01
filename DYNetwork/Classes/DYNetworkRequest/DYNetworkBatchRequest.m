@@ -2,7 +2,7 @@
 //  DYNetworkBatchRequest.m
 //  DYNetwork
 //
-//  Created by 德一智慧城市 on 2019/6/26.
+//  Created by 破晓工作室 on 2019/6/26.
 //
 
 #import "DYNetworkBatchRequest.h"
@@ -21,7 +21,7 @@
 @end
 
 @implementation DYNetworkBatchRequest {
-    dispatch_semaphore_t _sema;
+    NSOperationQueue *_queue;
 }
 
 - (instancetype)initWithRequestArray:(NSArray<DYNetworkRequest *> *)requestArray {
@@ -44,15 +44,19 @@
     
     _completedCount = 0;
     
-    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    queue.maxConcurrentOperationCount = self.maxConcurrentCount;
-    for (DYNetworkRequest * _Nonnull networkRequest in self.requestArray) {
-        networkRequest.responseDelegate = self;
-        networkRequest.containerClass = self;
+    if (_queue == nil) {
+        _queue = [[NSOperationQueue alloc]init];
+        _queue.maxConcurrentOperationCount = self.maxConcurrentCount;
+    }
+    
+    for (DYNetworkRequest * _Nonnull request in self.requestArray) {
+        request.responseDelegate = self;
+        request.containerClass = self;
         NSOperation * op = [NSBlockOperation blockOperationWithBlock:^{
-            [[DYNetworkManager sharedInstance] addRequest:networkRequest];
+            [[DYNetworkManager sharedInstance] addRequest:request];
         }];
-        switch (networkRequest.priorityType) {
+        op.qualityOfService = NSQualityOfServiceUserInteractive;
+        switch (request.priorityType) {
                 case DYNetworkPriorityTypeVeryHigh:
                     op.queuePriority = NSOperationQueuePriorityVeryHigh;
                 break;
@@ -69,7 +73,7 @@
                     op.queuePriority = NSOperationQueuePriorityNormal;
                 break;
         }
-        [queue addOperation:op];
+        [_queue addOperation:op];
     }
     
     [self accessoryDidStart];
@@ -78,6 +82,7 @@
 
 - (void)stopBatchRequest {
     _delegate = nil;
+    [_queue cancelAllOperations];
     for (DYNetworkRequest *networkRequest in self.requestArray) {
         [[DYNetworkManager sharedInstance] removeRequest:networkRequest];
     }

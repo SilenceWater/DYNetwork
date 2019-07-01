@@ -2,7 +2,7 @@
 //  DYNetworkRequestConfigProtocol.h
 //  DYNetwork
 //
-//  Created by 德一智慧城市 on 2019/6/25.
+//  Created by 破晓工作室 on 2019/6/25.
 //
 
 #import <Foundation/Foundation.h>
@@ -90,8 +90,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 
 /**
- 请求优先级
-
+ 请求队列执行优先级
+ @waring 跟NSOperation.queuePriority 对应
  @return 优先级
  */
 - (DYNetworkPriorityType)networkPriorityType;

@@ -2,7 +2,7 @@
 //  DYNetworkBatchRequest.h
 //  DYNetwork
 //
-//  Created by 德一智慧城市 on 2019/6/26.
+//  Created by 破晓工作室 on 2019/6/26.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 批量请求响应代理 */
 @property (nonatomic, weak) id <DYNetworkBatchResponseProtocol> delegate;
 
-/*! 最大并发量 默认3 */
+/*! 最大并发量 最大并发量不要乱写（5以内），不要开太多，一般以2~3为宜 默认3 */
 @property (nonatomic, assign) NSInteger maxConcurrentCount;
 
 
